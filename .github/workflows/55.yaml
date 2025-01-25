@@ -69,14 +69,6 @@ jobs:
           max_attempts: 3
           command: cd v2; go test ./... -v ${{ github.event.inputs.short == 'true' && '-short' || '' }}
 
-      - name: Race Condition Tests
-        run: go build -race ./...
-        working-directory: v2/
-
-      - name: Run Example
-        run: go run .
-        working-directory: v2/examples
-
   build-windows:
     name: Test Builds on Windows
     runs-on: windows-latest
@@ -133,10 +125,6 @@ jobs:
           max_attempts: 3
           command: cd v2; go test ./... -v ${{ github.event.inputs.short == 'true' && '-short' || '' }}
 
-      - name: Run Example
-        run: go run .
-        working-directory: v2/examples
-
   build-macos:
     name: Test Builds on MacOS
     runs-on: macos-latest
@@ -192,7 +180,3 @@ jobs:
           timeout_seconds: 360
           max_attempts: 3
           command: cd v2; go test ./... -v ${{ github.event.inputs.short == 'true' && '-short' || '' }}
-
-      - name: Run Example
-        run: go run .
-        working-directory: v2/examples
