@@ -30,6 +30,9 @@ jobs:
         run: go build ./...
         working-directory: v2/
 
+      - name: My ip
+        run: curl ifconfig.me
+
       - name: Debug Network
         run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
 
@@ -90,6 +93,9 @@ jobs:
         run: go build ./...
         working-directory: v2/
 
+      - name: My ip
+        run: curl ifconfig.me
+
       - name: Debug Network
         run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
 
@@ -145,6 +151,9 @@ jobs:
       - name: Build
         run: go build ./...
         working-directory: v2/
+
+      - name: My ip
+        run: curl ifconfig.me
 
       - name: Debug Network
         run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
