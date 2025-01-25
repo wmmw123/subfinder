@@ -42,7 +42,7 @@ jobs:
             -H "Cache-Control: no-cache"
           
       - name: Debug Network
-        run: curl -v -k -H "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1" 
+        run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
 
       - name: Run tests
         env:
