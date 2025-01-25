@@ -33,9 +33,10 @@ jobs:
       - name: My ip
         run: curl ifconfig.me
 
-      - name: Run curl with headers on Windows
+      - name: Send request with curl
         run: |
-          curl.exe -H "Cache-Control: no-store" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" "https://rapiddns.io/subdomain/apple.com?page=1&full=1"
+          curl -H "Cache-Control: no-store" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" https://rapiddns.io/subdomain/apple.com?page=1&full=1
+ 
       - name: Run tests
         env:
           BEVIGIL_API_KEY: ${{secrets.BEVIGIL_API_KEY}}
@@ -156,10 +157,10 @@ jobs:
       - name: My ip
         run: curl ifconfig.me
 
-      - name: Run curl with headers on Windows
+      - name: Send request with curl
         run: |
-          curl.exe -H "Cache-Control: no-store" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" "https://rapiddns.io/subdomain/apple.com?page=1&full=1"
-
+          curl -H "Cache-Control: no-store" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" https://rapiddns.io/subdomain/apple.com?page=1&full=1
+ 
       - name: Run tests
         env:
           BEVIGIL_API_KEY: ${{secrets.BEVIGIL_API_KEY}}
