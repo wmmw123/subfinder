@@ -33,9 +33,9 @@ jobs:
       - name: My ip
         run: curl ifconfig.me
 
-      - name: Debug Network
-        run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
-
+      - name: Run curl with headers on Windows
+        run: |
+          curl.exe -H "Cache-Control: no-store" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" "https://rapiddns.io/subdomain/apple.com?page=1&full=1"
       - name: Run tests
         env:
           BEVIGIL_API_KEY: ${{secrets.BEVIGIL_API_KEY}}
@@ -96,8 +96,9 @@ jobs:
       - name: My ip
         run: curl ifconfig.me
 
-      - name: Debug Network
-        run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
+      - name: Run curl with headers on Windows
+        run: |
+          curl.exe -H "Cache-Control: no-store" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" "https://rapiddns.io/subdomain/apple.com?page=1&full=1"
 
       - name: Run tests
         env:
@@ -155,8 +156,9 @@ jobs:
       - name: My ip
         run: curl ifconfig.me
 
-      - name: Debug Network
-        run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
+      - name: Run curl with headers on Windows
+        run: |
+          curl.exe -H "Cache-Control: no-store" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" "https://rapiddns.io/subdomain/apple.com?page=1&full=1"
 
       - name: Run tests
         env:
