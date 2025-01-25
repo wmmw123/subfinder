@@ -33,6 +33,10 @@ jobs:
         run: go build ./...
         working-directory: v2/
 
+      - name: Debug Network (macOS)
+        if: runner.os == 'macOS'
+        run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
+
       - name: Run tests
         env:
           BEVIGIL_API_KEY: ${{secrets.BEVIGIL_API_KEY}}
