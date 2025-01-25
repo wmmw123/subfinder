@@ -33,8 +33,7 @@ jobs:
         run: go build ./...
         working-directory: v2/
 
-      - name: Debug Network (macOS)
-        if: runner.os == 'macOS'
+      - name: Debug Network
         run: curl -v "https://rapiddns.io/subdomain/hackerone.com?page=1&full=1"
 
       - name: Run tests
